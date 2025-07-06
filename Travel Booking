@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acting Driver Suganthan - Your Personal Acting Driver Service</title>
+    
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* Custom styles to enhance the design */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+        }
+        .hero-section {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1533127320734-16853504d5c1?q=80&w=1920&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover;
+            background-position: center;
+        }
+        .service-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+        /* Style for the booking modal */
+        .modal {
+            transition: opacity 0.3s ease;
+        }
+        .modal-content {
+            transition: transform 0.3s ease;
+        }
+        /* Hide number input arrows */
+        input[type=number]::-webkit-inner-spin-button, 
+        input[type=number]::-webkit-outer-spin-button { 
+          -webkit-appearance: none; 
+          margin: 0; 
+        }
+        input[type=number] {
+          -moz-appearance: textfield;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Header Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl md:text-2xl font-bold text-slate-800">
+                <i class="fas fa-car-side mr-2"></i>Acting Driver Suganthan
+            </a>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#home" class="text-gray-600 hover:text-slate-800 transition">Home</a>
+                <a href="#services" class="text-gray-600 hover:text-slate-800 transition">Services</a>
+                <a href="#about" class="text-gray-600 hover:text-slate-800 transition">About</a>
+                <a href="#contact" class="text-gray-600 hover:text-slate-800 transition">Contact</a>
+            </div>
+            <a href="#services" class="hidden md:inline-block bg-slate-700 text-white font-semibold px-6 py-2 rounded-lg hover:bg-slate-800 transition shadow-lg">Book Now</a>
+            <button id="mobile-menu-button" class="md:hidden text-slate-800">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="#home" class="block py-2 text-gray-600 hover:text-slate-800">Home</a>
+            <a href="#services" class="block py-2 text-gray-600 hover:text-slate-800">Services</a>
+            <a href="#about" class="block py-2 text-gray-600 hover:text-slate-800">About</a>
+            <a href="#contact" class="block py-2 text-gray-600 hover:text-slate-800">Contact</a>
+            <a href="#services" class="block mt-2 w-full text-center bg-slate-700 text-white font-semibold px-6 py-2 rounded-lg hover:bg-slate-800 transition">Book Now</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section text-white h-[60vh] md:h-[80vh] flex items-center">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">Your Reliable Acting Driver on Demand</h1>
+            <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto text-gray-200">Safe, professional, and punctual service available 24/7 across India. Whether you need a driver for your own car or a complete travel solution, enjoy your journey while we handle the driving.</p>
+            <a href="#services" class="bg-slate-600 text-white font-bold py-3 px-8 rounded-full hover:bg-slate-700 transition text-lg shadow-xl">Explore Services</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-slate-800">Our Services</h2>
+                <p class="text-gray-600 mt-2 max-w-2xl mx-auto">Choose the perfect service for your needs. All bookings are handled with utmost professionalism and care.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Service Card 1: Driver Only -->
+                <div class="service-card bg-gray-50 rounded-xl shadow-lg p-8 text-center flex flex-col">
+                    <div class="text-5xl text-slate-600 mb-4"><i class="fas fa-user-tie"></i></div>
+                    <h3 class="text-2xl font-bold mb-3">Driver Only</h3>
+                    <p class="text-gray-600 mb-6 flex-grow">Have your own car? Our professional driver will meet you and drive your vehicle, ensuring you travel in comfort and safety.</p>
+                    <p class="text-3xl font-bold text-slate-800 mb-6">₹1600<span class="text-lg font-normal">/day</span></p>
+                    <button class="booking-btn mt-auto bg-slate-700 text-white font-semibold py-3 px-6 rounded-lg hover:bg-slate-800 transition" data-service="Driver Only">Book Now</button>
+                </div>
+
+                <!-- Service Card 2: Driver with Standard Car -->
+                <div class="service-card bg-gray-50 rounded-xl shadow-lg p-8 text-center flex flex-col">
+                    <div class="text-5xl text-slate-600 mb-4"><i class="fas fa-car"></i></div>
+                    <h3 class="text-2xl font-bold mb-3">Driver with Standard Car</h3>
+                    <p class="text-gray-600 mb-6 flex-grow">Need a ride? We'll provide a clean, comfortable 5-seater sedan along with a professional driver for your local or outstation trips.</p>
+                    <p class="text-3xl font-bold text-slate-800 mb-6">₹3600<span class="text-lg font-normal">/day</span></p>
+                    <button class="booking-btn mt-auto bg-slate-700 text-white font-semibold py-3 px-6 rounded-lg hover:bg-slate-800 transition" data-service="Driver with Standard Car">Book Now</button>
+                </div>
+
+                <!-- Service Card 3: Driver with Premium Car -->
+                <div class="service-card bg-gray-50 rounded-xl shadow-lg p-8 text-center flex flex-col md:col-span-2 lg:col-span-1">
+                    <div class="text-5xl text-slate-600 mb-4"><i class="fas fa-gem"></i></div>
+                    <h3 class="text-2xl font-bold mb-3">Driver with Premium Car</h3>
+                    <p class="text-gray-600 mb-6 flex-grow">For special occasions or larger groups. Arrive in a spacious 7-seater luxury vehicle with our top-rated chauffeur service.</p>
+                    <p class="text-3xl font-bold text-slate-800 mb-6">₹6400<span class="text-lg font-normal">/day</span></p>
+                    <button class="booking-btn mt-auto bg-slate-700 text-white font-semibold py-3 px-6 rounded-lg hover:bg-slate-800 transition" data-service="Driver with Premium Car">Book Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-slate-50">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <img src="https://placehold.co/600x400/e2e8f0/334155?text=Suganthan" alt="Professional Driver Suganthan" class="rounded-xl shadow-2xl w-full">
+                </div>
+                <div class="md:w-1/2 text-center md:text-left">
+                    <h2 class="text-4xl font-bold text-slate-800 mb-4">About Your Driver, Suganthan</h2>
+                    <p class="text-gray-600 mb-4 text-lg">With over 10 years of professional driving experience, I, Suganthan, am dedicated to providing a service that is not just reliable, but also exceptionally safe and comfortable. I hold a valid commercial license, a clean driving record, and have undergone extensive background checks.</p>
+                    <p class="text-gray-600 text-lg">My priority is your peace of mind. Whether it's a late-night party, an important business meeting, or a family trip, you can trust me to be punctual, discreet, and professional at all times. My services are available 24/7, anywhere in India.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-slate-800">Get In Touch</h2>
+                <p class="text-gray-600 mt-2">Have questions? Send a message or call us directly.</p>
+            </div>
+            <div class="max-w-4xl mx-auto flex flex-col md:flex-row gap-10">
+                <div class="md:w-1/2 bg-gray-50 p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold mb-4">Contact Information</h3>
+                    <div class="space-y-4 text-gray-700">
+                        <p><i class="fas fa-phone mr-3 text-slate-600"></i> +91 9597558989</p>
+                        <p><i class="fas fa-envelope mr-3 text-slate-600"></i> booking@actingsuganthan.com</p>
+                        <p><i class="fas fa-map-marker-alt mr-3 text-slate-600"></i> Service Available Pan-India (24/7)</p>
+                    </div>
+                </div>
+                <div class="md:w-1/2 bg-gray-50 p-8 rounded-xl shadow-lg">
+                     <h3 class="text-2xl font-bold mb-4">Send a Message</h3>
+                    <form id="contactForm">
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-700 mb-1">Name</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-500" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-700 mb-1">Email</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-500" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="message" class="block text-gray-700 mb-1">Message</label>
+                            <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-500" required></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-slate-700 text-white font-semibold py-3 px-6 rounded-lg hover:bg-slate-800 transition">Send Inquiry</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 Acting Driver Suganthan.</p>
+            <div class="mt-4 mb-4 flex justify-center space-x-4">
+                <a href="https://www.instagram.com/acting_driver_sugan/" target="_blank" rel="noopener noreferrer" class="hover:text-slate-300 text-2xl"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p class="text-sm text-gray-400">Designed by 6pm Studios, Chennai. All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="modal fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center p-4 z-50 opacity-0 pointer-events-none">
+        <div class="modal-content bg-white w-full max-w-lg rounded-xl shadow-2xl p-8 transform scale-95">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-3xl font-bold text-slate-800">Book Your Ride</h2>
+                <button id="closeModal" class="text-gray-500 hover:text-gray-800 text-2xl">&times;</button>
+            </div>
+            <div id="booking-confirmation" class="hidden text-center py-10">
+                <div class="text-6xl text-green-500 mb-4"><i class="fas fa-check-circle"></i></div>
+                <h3 class="text-2xl font-bold text-slate-800">Redirecting to WhatsApp...</h3>
+                <p class="text-gray-600 mt-2">Your booking details are ready. Please click "Send" in WhatsApp to confirm.</p>
+            </div>
+            <form id="bookingForm">
+                <div class="mb-4">
+                    <label for="bookingName" class="block text-gray-700 mb-1 font-medium">Full Name</label>
+                    <input type="text" id="bookingName" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-500" required>
+                </div>
+                <div class="mb-4">
+                    <label for="bookingPhone" class="block text-gray-700 mb-1 font-medium">Phone Number</label>
+                    <input type="tel" id="bookingPhone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-500" required>
+                </div>
+                <div class="grid md:grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <label for="bookingService" class="block text-gray-700 mb-1 font-medium">Service Type</label>
+                        <select id="bookingService" class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-slate-500">
+                            <option>Driver Only</option>
+                            <option>Driver with Standard Car</option>
+                            <option>Driver with Premium Car</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="bookingDuration" class="block text-gray-700 mb-1 font-medium">Duration (Days)</label>
+                        <input type="number" id="bookingDuration" value="1" min="1" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-500" required>
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <label for="bookingDate" class="block text-gray-700 mb-1 font-medium">Start Date</label>
+                        <input type="date" id="bookingDate" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-500" required>
+                    </div>
+                    <div>
+                        <label for="bookingTime" class="block text-gray-700 mb-1 font-medium">Start Time</label>
+                        <input type="time" id="bookingTime" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-500" required>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <label for="pickupLocation" class="block text-gray-700 mb-1 font-medium">Pickup Location</label>
+                    <input type="text" id="pickupLocation" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-500" placeholder="e.g., Any City in India" required>
+                </div>
+                <div class="bg-slate-100 p-4 rounded-lg mb-6 text-right">
+                    <span class="text-gray-600 font-medium">Estimated Total:</span>
+                    <span id="estimatedTotal" class="text-2xl font-bold text-slate-800 ml-2">₹1600</span>
+                </div>
+                <button type="submit" class="w-full bg-slate-700 text-white font-bold py-3 px-6 rounded-lg hover:bg-slate-800 transition text-lg">Confirm Booking on WhatsApp</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for mobile menu and booking modal functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const bookingModal = document.getElementById('bookingModal');
+            const closeModal = document.getElementById('closeModal');
+            const bookingBtns = document.querySelectorAll('.booking-btn');
+            const bookingForm = document.getElementById('bookingForm');
+            const contactForm = document.getElementById('contactForm');
+            const bookingServiceSelect = document.getElementById('bookingService');
+            const bookingDurationInput = document.getElementById('bookingDuration');
+            const estimatedTotalEl = document.getElementById('estimatedTotal');
+            const bookingConfirmation = document.getElementById('booking-confirmation');
+
+            // --- Price Calculation Logic ---
+            const dailyRates = {
+                'Driver Only': 1600,
+                'Driver with Standard Car': 3600,
+                'Driver with Premium Car': 6400
+            };
+
+            function updatePrice() {
+                const service = bookingServiceSelect.value;
+                const duration = parseInt(bookingDurationInput.value) || 1;
+                const dailyRate = dailyRates[service];
+                
+                if (dailyRate && duration > 0) {
+                    const total = dailyRate * duration;
+                    estimatedTotalEl.textContent = `₹${total}`;
+                } else {
+                    estimatedTotalEl.textContent = 'N/A';
+                }
+            }
+            // --- End of Price Calculation Logic ---
+
+            // Set minimum date for date input to today
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('bookingDate').setAttribute('min', today);
+
+            // Toggle mobile menu
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Function to open the modal
+            const openModal = (serviceType) => {
+                bookingServiceSelect.value = serviceType;
+                bookingModal.classList.remove('opacity-0', 'pointer-events-none');
+                bookingModal.querySelector('.modal-content').classList.remove('scale-95');
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+                updatePrice(); // Calculate initial price
+            };
+
+            // Function to close the modal
+            const closeModalFunc = () => {
+                bookingModal.classList.add('opacity-0', 'pointer-events-none');
+                bookingModal.querySelector('.modal-content').classList.add('scale-95');
+                document.body.style.overflow = 'auto'; // Restore scrolling
+                // Reset form for next time
+                setTimeout(() => {
+                    bookingForm.classList.remove('hidden');
+                    bookingConfirmation.classList.add('hidden');
+                    bookingForm.reset();
+                    bookingDurationInput.value = 1; // Reset duration to 1
+                    updatePrice(); // Reset price display
+                }, 300);
+            };
+
+            // Event listeners for booking buttons
+            bookingBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const service = btn.getAttribute('data-service');
+                    openModal(service);
+                });
+            });
+
+            // Event listeners for price calculation
+            bookingServiceSelect.addEventListener('change', updatePrice);
+            bookingDurationInput.addEventListener('input', updatePrice);
+
+
+            // Event listener for close button
+            closeModal.addEventListener('click', closeModalFunc);
+            
+            // Event listener to close modal on background click
+            bookingModal.addEventListener('click', (e) => {
+                if (e.target === bookingModal) {
+                    closeModalFunc();
+                }
+            });
+            
+            // Handle booking form submission for WhatsApp
+            bookingForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // Get all form values
+                const name = document.getElementById('bookingName').value;
+                const phone = document.getElementById('bookingPhone').value;
+                const service = document.getElementById('bookingService').value;
+                const duration = document.getElementById('bookingDuration').value;
+                const date = document.getElementById('bookingDate').value;
+                const time = document.getElementById('bookingTime').value;
+                const location = document.getElementById('pickupLocation').value;
+                const totalCost = document.getElementById('estimatedTotal').textContent;
+
+                // Construct the WhatsApp message
+                const message = `*New Acting Driver Booking Request*\n---------------------------------\n*Name:* ${name}\n*Phone:* ${phone}\n*Service:* ${service}\n*Duration:* ${duration} Day(s)\n*Start Date:* ${date}\n*Start Time:* ${time}\n*Pickup Location:* ${location}\n*Estimated Total:* ${totalCost}\n---------------------------------\nPlease confirm my booking.`;
+
+                // Create the WhatsApp URL
+                const whatsappNumber = "919597558989";
+                const encodedMessage = encodeURIComponent(message);
+                const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+                // Show confirmation message on website
+                bookingForm.classList.add('hidden');
+                bookingConfirmation.classList.remove('hidden');
+                
+                // Open WhatsApp in a new tab
+                window.open(whatsappURL, '_blank');
+
+                // Close the modal after a few seconds
+                setTimeout(() => {
+                    closeModalFunc();
+                }, 4000); 
+            });
+
+            // Handle contact form submission
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Thank you for your inquiry! We will get back to you soon.');
+                contactForm.reset();
+            });
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    // Close mobile menu on link click
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
